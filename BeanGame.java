@@ -1,4 +1,4 @@
-
+//U10416036
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -12,23 +12,19 @@ import javafx.scene.shape.*;
 
 /**
  *
- * @author MACBOOK
+ * @author MengLin
  */
 public class BeanGame extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        
         Scene scene = new Scene(new Drawer(), 300, 300);
         primaryStage.setTitle("BeanGame");
         primaryStage.setScene(scene);
         primaryStage.show();
-        
     }
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         launch(args);
     }
@@ -71,42 +67,15 @@ class Drawer extends Pane{
         getChildren().add(c1);
         float x = (240 - 60) / (8*2);
         float y = (250 - 90) / 6;
-        for(int j = 0; j < 2; j++){
-            Circle c2 = new Circle();
-            c2.setCenterX(150-x + 2*x*j);
-            c2.setCenterY(95+y);
-            c2.setRadius(5.0f);
-            getChildren().add(c2);
+        for(int i = 1;i<6;i++){
+            for(int j = 0; j <= i; j++){
+                Circle c2 = new Circle();
+                c2.setCenterX(150-x*i + 2*x*j);
+                c2.setCenterY(95+y*i);
+                c2.setRadius(5.0f);
+                getChildren().add(c2);
+            }
         }
-        for(int j = 0; j < 3; j++){
-            Circle c2 = new Circle();
-            c2.setCenterX(150-2*x + 2*x*j);
-            c2.setCenterY(95+2*y);
-            c2.setRadius(5.0f);
-            getChildren().add(c2);
-        }
-        for(int j = 0; j < 4; j++){
-            Circle c2 = new Circle();
-            c2.setCenterX(150-3*x + 2*x*j);
-            c2.setCenterY(95+3*y);
-            c2.setRadius(5.0f);
-            getChildren().add(c2);
-        }
-        for(int j = 0; j < 5; j++){
-            Circle c2 = new Circle();
-            c2.setCenterX(150-4*x + 2*x*j);
-            c2.setCenterY(95+4*y);
-            c2.setRadius(5.0f);
-            getChildren().add(c2);
-        }
-        for(int j = 0; j < 6; j++){
-            Circle c2 = new Circle();
-            c2.setCenterX(150-5*x + 2*x*j);
-            c2.setCenterY(95+5*y);
-            c2.setRadius(5.0f);
-            getChildren().add(c2);
-        }
-        
     }
     
     
